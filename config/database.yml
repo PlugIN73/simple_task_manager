@@ -1,0 +1,24 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: simply_test_manager_development
+  pool: 5
+  username: simply_test_manager
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: simply_test_manager_test
+  pool: 5
+  username: simply_test_manager
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: simply_test_manager_production
+  pool: 5
+  username: simply_test_manager
+  password:
