@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9.rc2'
 gem 'pg'
 gem 'jquery-rails'
+gem "bcrypt-ruby", :require => "bcrypt"
+gem "haml"
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
