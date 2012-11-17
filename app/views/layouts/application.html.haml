@@ -34,19 +34,22 @@
 
                 %li= link_to current_user.email, current_user
                 %li= link_to "Выйти", log_out_path, method: :delete
-                #wrap
-                  .container
-                    .row
-                      .span12
-                      - if flash[:notice]
-                        .alert.alert-success
-                          = flash[:notice]
-                      - if flash[:error]
-                        .alert.alert-error
-                          = flash[:error]
+    -else
+      = link_to "Регистрация", sign_up_path
+      %br
+      = link_to "Вход", log_in_path
 
-                      = yield
-    
-    %footer#footer
-      %p &copy; бла бла бла
+    #wrap
+      .container
+        .row
+          .span12
+          - if flash[:notice]
+            .alert.alert-success
+            = flash[:notice]
+          - if flash[:error]
+            .alert.alert-error
+            = flash[:error]
+          = yield
+
     = javascript_include_tag "application"
+
