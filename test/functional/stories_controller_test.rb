@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
   def setup
-    @story = create :story
+    @story = FactoryGirl.build(:story)
   end
 
   test "should get index" do

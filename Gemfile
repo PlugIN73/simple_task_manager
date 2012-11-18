@@ -5,6 +5,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'state_machine'
+gem 'factory_girl'
 gem 'factory_girl_rails'
 
 

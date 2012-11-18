@@ -1,7 +1,8 @@
 #require 'simplecov'
 #SimpleCov.start
 
-require 'factory_girl_rails'
+#require 'factory_girl_rails'
+#FactoryGirl.find_definitions
 
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
