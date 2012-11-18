@@ -19,6 +19,6 @@ end
 
 
 group :development, :test do
-  gem 'simplecov', :require => false
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
 end

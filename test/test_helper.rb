@@ -7,5 +7,6 @@ require 'rails/test_help'
 
 class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
+  FactoryGirl.find_definitions
   FactoryGirl.reload
 end
