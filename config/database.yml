@@ -12,7 +12,7 @@ test:
   encoding: unicode
   database: simply_test_manager_test
   pool: 5
-  username: simply_test_manager
+  username: postgres
   password:
 
 production:
