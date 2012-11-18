@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
-  setup do
-    @story = stories(:one)
+  def setup
+    @story = create :story
+
   end
 
   test "should get index" do
