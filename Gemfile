@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9.rc2'
 gem 'pg'
 gem 'jquery-rails'
-gem "bcrypt-ruby", :require => "bcrypt"
-gem "haml"
+gem 'haml'
+gem 'state_machine'
+
+
 
 
 group :assets do
@@ -15,3 +17,8 @@ group :assets do
 end
 
 
+
+group :development, :test do
+  gem 'simplecov', :require => false
+  gem 'factory_girl_rails'
+end
