@@ -2,7 +2,7 @@ require 'test_helper'
 
 class StoryCommentsControllerTest < ActionController::TestCase
   setup do
-    @story_comment = story_comments(:one)
+    @story_comment = FactoryGirl.create(:story_comment)
   end
 
   test "should get index" do
