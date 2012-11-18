@@ -1,3 +1,5 @@
+{<img src="https://secure.travis-ci.org/PlugIN73/simply_test_manager.png?branch=master" alt="Build Status" />}[https://travis-ci.org/PlugIN73/simply_test_manager]
+
 simple task manager (прототип pivotaltracker.com PT)
 Сущности:
 user
