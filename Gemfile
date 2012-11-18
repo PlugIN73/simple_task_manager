@@ -5,7 +5,7 @@ gem 'pg'
 gem 'jquery-rails'
 gem 'haml'
 gem 'state_machine'
-
+gem 'factory_girl_rails'
 
 
 
@@ -19,6 +19,6 @@ end
 
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'simplecov', :require => false
+
+  #gem 'simplecov', :require => false
 end
