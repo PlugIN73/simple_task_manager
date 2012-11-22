@@ -3,7 +3,6 @@
 Simple task manager (прототип pivotaltracker.com PT)
 
   Сущности:
-
     user
     story
     story_comment
