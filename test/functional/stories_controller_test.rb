@@ -2,9 +2,8 @@ require 'test_helper'
 
 class StoriesControllerTest < ActionController::TestCase
   def setup
-    @story = FactoryGirl.create(:story)
+    @story = create :story
   end
-
   test "should get index" do
     get :index
     assert_response :success
@@ -20,7 +19,6 @@ class StoriesControllerTest < ActionController::TestCase
     assert_difference('Story.count') do
       post :create, story: { author_id: @story.author_id, description: @story.description, state: @story.state, title: @story.title, user_id: @story.user_id }
     end
-
     assert_redirected_to story_path(assigns(:story))
   end
 

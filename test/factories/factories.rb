@@ -1,21 +1,29 @@
 FactoryGirl.define do
-  factory :user do
-    name "John"
-    email "test@test.ru"
-    password  "12345"
+
+  sequence :email do |n|
+    "user#{n}@myhost.com"
+  end
+
+  sequence :password do |n|
+    "Password_#{n}_#{n}"
+  end
+
+  factory :user, aliases: [:author, :commenter] do
+    name "Test Name"
+    email
+    password
   end
 
   factory :story do
-    title "story"
-    state "created"
-    user_id 1
-    description "description"
-    author_id 1
+    title "Test story title"
+    association :user, name: "User name"
+    association :author, name: "Author name"
+    description "Descriprion created at #{ Time.now }"
   end
 
   factory :story_comment do
-    story_id 1
-    comment "new comment"
+    story_id 12
+    comment ""
     user_id 1
   end
 end

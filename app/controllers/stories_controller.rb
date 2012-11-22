@@ -80,4 +80,13 @@ class StoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def change_state
+    @post = Post.find(params[:post_id])
+    if @post
+      @post.fire_state_event(params[:event])
+      @post.save
+    end
+    redirect_to posts_path
+  end
 end
