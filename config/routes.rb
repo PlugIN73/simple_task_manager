@@ -1,7 +1,9 @@
 SimplyTestManager::Application.routes.draw do
   root to: "stories#index"
   resources :story_comments
-  resources :stories
+  resources :stories do
+    put :change_state
+  end
   resources :users
   resources :sessions
 
