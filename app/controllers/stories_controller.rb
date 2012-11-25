@@ -2,12 +2,15 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @stories }
+    q = params[:q]
+    @stories = Story
+    if q
+      @stories = @stories.where(author_id: q[:author_id]) unless q[:author_id].blank?
+      @stories = @stories.where(performer_id: q[:performer_id]) unless q[:performer_id].blank?
+      @stories = @stories.where(state: q[:state]) unless q[:state].blank?
     end
+    @stories = @stories.all
+
   end
 
   # GET /stories/1
