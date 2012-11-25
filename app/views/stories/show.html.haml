@@ -21,7 +21,15 @@
   = link_to "Начать выполнение", story_change_state_path(@story, event: :start), method: :put if @story.can_start?
   = link_to "Завершить выполнение", story_change_state_path(@story, event: :finish), method: :put if @story.can_finish?
 
+%br
+.comment-list
+  - @story.comments.reverse.each do |comment|
+    .comment
+      = comment.content
+      %br
+      = link_to comment.author.email, comment.author
 
 = link_to 'Edit', edit_story_path(@story)
 |
 \#{link_to 'Back', stories_path}
+

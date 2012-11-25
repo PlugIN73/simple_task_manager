@@ -87,6 +87,6 @@ class StoriesController < ApplicationController
       @story.fire_state_event(params[:event])
       @story.save
     end
-    redirect_to stories_path
+    redirect_to @story
   end
 end
