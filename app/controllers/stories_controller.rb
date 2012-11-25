@@ -82,11 +82,11 @@ class StoriesController < ApplicationController
   end
 
   def change_state
-    @post = Post.find(params[:post_id])
-    if @post
-      @post.fire_state_event(params[:event])
-      @post.save
+    @story = Story.find(params[:story_id])
+    if @story
+      @story.fire_state_event(params[:event])
+      @story.save
     end
-    redirect_to posts_path
+    redirect_to @story
   end
 end

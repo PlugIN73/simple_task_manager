@@ -1,8 +1,12 @@
 require 'test_helper'
+include ApplicationHelper
 
 class StoriesControllerTest < ActionController::TestCase
   def setup
-    @story = create :story
+    @user = create :user
+    @author = create :author
+    @story = create :story, user: @user, author: @author
+    sign_in @user
   end
   test "should get index" do
     get :index
@@ -41,7 +45,12 @@ class StoriesControllerTest < ActionController::TestCase
     assert_difference('Story.count', -1) do
       delete :destroy, id: @story
     end
+    assert_equal(signed_in?, @user)
+    assert_redirected_to stories_path
+  end
 
+  test "should put change_state" do
+    put :change_state, story_id: @story.id, event: "accept"
     assert_redirected_to stories_path
   end
 end
