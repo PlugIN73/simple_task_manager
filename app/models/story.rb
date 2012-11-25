@@ -7,6 +7,8 @@ class Story < ActiveRecord::Base
   validates :user, presence:true
   validates :title, presence:true
 
+  has_many :story_comments
+
   state_machine initial: :new do
     event :accept do
       transition [:new, :rejected] => :accepted

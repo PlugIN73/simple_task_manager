@@ -28,10 +28,10 @@
           .span12
           - if flash[:notice]
             .alert.alert-success
-            = flash[:notice]
+              = flash[:notice]
           - if flash[:error]
             .alert.alert-error
-            = flash[:error]
+              = flash[:error]
           = yield
 
     = javascript_include_tag "application"

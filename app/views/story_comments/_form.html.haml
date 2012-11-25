@@ -1,19 +1,7 @@
-= simple_fields_for (@story_comment) do |f|
-  - if @story_comment.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@story_comment.errors.count, "error")
-        prohibited this story_comment from being saved:
-      %ul
-        - @story_comment.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.input :story_id, :collection => Story.all, :label_method => :title, :value_method => :id, :include_blank => false
-  .field
-    = f.label :comment
-    %br/
-    = f.text_area :comment
-  .field
-    = f.hidden_field :user_id, :label_method => :user_id, :value => current_user.id
+= simple_form_for (comment) do |f|
+  = f.input :story_id, as: :hidden
+  = f.input :user_id, input_html: { value: current_user.id }, as: :hidden
+  = f.input :comment, as: :text, input_html: { rows: 5, cols: 60, class: "input-xxlarge" }, :label => 'New comment'
+
   .actions
     = f.submit

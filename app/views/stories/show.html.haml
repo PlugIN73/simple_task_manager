@@ -22,14 +22,18 @@
   = link_to "Завершить выполнение", story_change_state_path(@story, event: :finish), method: :put if @story.can_finish?
 
 %br
-.comment-list
-  - @story.comments.reverse.each do |comment|
-    .comment
-      = comment.content
-      %br
-      = link_to comment.author.email, comment.author
-
 = link_to 'Edit', edit_story_path(@story)
 |
 \#{link_to 'Back', stories_path}
 
+.story-comment-list
+  - @story.story_comments.each do |comment|
+    .comment
+      %hr
+      %b
+        = User.find(comment.user_id).email
+      = link_to "delete", story_comment_path(comment), method: :delete
+      %br
+      = comment.comment
+%hr
+= render partial: "story_comments/form", locals: { comment: StoryComment.new(story_id: @story.id) }

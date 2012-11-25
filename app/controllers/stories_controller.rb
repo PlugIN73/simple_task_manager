@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
-    @story = Story.find(params[:id])
+    @story = Story.includes(:story_comments).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -87,6 +87,6 @@ class StoriesController < ApplicationController
       @story.fire_state_event(params[:event])
       @story.save
     end
-    redirect_to @story
+    redirect_to stories_path
   end
 end
