@@ -3,10 +3,10 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    = stylesheet_link_tag "bootstrap", :media => "all"
+    = stylesheet_link_tag "application", :media => "all"
   %body
     - if signed_in?
-      .navbar.navbar-fixed-top.navbar-inverse
+      .navbar
         .navbar-inner
           .container
             %a.brand(href="/") TaskManager
@@ -14,7 +14,7 @@
               = link_to current_user.email, current_user
               = link_to "Выйти", log_out_path, method: :delete
     -else
-      .navbar.navbar-fixed-top.navbar-inverse
+      .navbar
         .navbar-inner
           .container
             %a.brand(href="/") TaskManager

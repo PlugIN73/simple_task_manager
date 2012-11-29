@@ -6,6 +6,8 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'state_machine'
 gem 'simple_form'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 
 
