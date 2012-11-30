@@ -18,5 +18,5 @@ Simple task manager (прототип pivotaltracker.com PT)
     база postgresql +
     вьюхи haml +
     код под гитом на github; +
-    приложение на heroku.com;
+    приложение на heroku.com; + http://damp-springs-1580.herokuapp.com/
     для форм simple_form (он может работать с twitter bootstrap из коробки) +
