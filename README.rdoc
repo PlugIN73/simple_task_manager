@@ -14,7 +14,7 @@ Simple task manager (прототип pivotaltracker.com PT)
     просмотр тасков с фильтром по юзерам, по состояниям; +
     дизайн http://twitter.github.com/bootstrap/ +
   Требования и рекомендации:
-    тестами должны быть покрыты все контроллеры (minitest);
+    тестами должны быть покрыты все контроллеры (minitest); +
     база postgresql +
     вьюхи haml +
     код под гитом на github; +
