@@ -1,4 +1,4 @@
-= simple_form_for (comment) do |f|
+= simple_form_for (@q) do |f|
   = f.input :story_id, as: :hidden
   = f.input :user_id, input_html: { value: current_user.id }, as: :hidden
   = f.input :comment, as: :text, input_html: { rows: 5, cols: 60, class: "input-xxlarge" }, :label => 'New comment'
